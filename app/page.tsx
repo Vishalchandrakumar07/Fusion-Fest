@@ -77,7 +77,7 @@ export default function Page() {
           {/* Tagline */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/30 text-sm text-primary font-semibold mb-4">
             <Sparkles className="w-4 h-4" />
-            <span>Welcome to Innovation 2025</span>
+            <span>Welcome to Innovation 2026</span>
           </div>
 
           {/* Main Title */}
