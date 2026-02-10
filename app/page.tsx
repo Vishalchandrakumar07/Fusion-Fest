@@ -9,48 +9,49 @@ import { Sparkles } from 'lucide-react'
 const TechnicalEvents = [
   {
     title: 'PaperXpo',
-    description: 'Showcase your research and innovative ideas in front of tech enthusiasts',
+    description: 'Present your research ideas, innovations, and technical concepts to a panel of judges.',
   },
   {
     title: 'Tech Escape',
-    description: 'Compete in real-time coding challenges and prove your programming prowess',
+    description: 'Solve technical puzzles, coding clues, and challenges to escape within the given time.',
   },
   {
     title: 'Error Auction',
-    description: 'Find and fix bugs in complex code within the time limit',
+    description: 'Identify, analyze, and fix bugs in given code snippets under time pressure.',
   },
   {
     title: 'Web Architect',
-    description: 'Display your semester projects and demonstrate live implementations',
+    description: 'Design and develop creative, responsive websites within the competition time.',
   },
   {
-    title: 'Prompt Olympia',
-    description: 'Display your semester projects and demonstrate live implementations',
+    title: 'Prompt Olympic',
+    description: 'Show your AI prompt engineering skills by generating accurate and creative outputs.',
   },
 ]
 
 const NonTechnicalEvents = [
   {
     title: 'Short Film',
-    description: 'Test your knowledge of technology and computer science fundamentals',
+    description: 'Create and present a short film based on creativity, storytelling, and theme.',
   },
   {
-    title: 'E-Sports(Free Fire)',
-    description: 'Compete in popular gaming titles and win exciting prizes',
+    title: 'E-Sports (Free Fire)',
+    description: 'Compete in team-based Free Fire matches and battle for the championship.',
   },
   {
     title: 'Meme Marathon',
-    description: 'Showcase your photography skills with tech and innovation themes',
+    description: 'Design humorous and creative memes based on given themes.',
   },
   {
     title: 'Connection',
-    description: 'Create hilarious tech-themed memes and compete for awards',
+    description: 'Find the relationship between clues or images and guess the correct concept.',
   },
   {
     title: 'Treasure Hunt',
-    description: 'Find hidden tech clues and win exciting prizes',
+    description: 'Follow clues, solve tasks, and locate the hidden treasure across the venue.',
   },
 ]
+
 
 export default function Page() {
   const handleRegister = () => {
@@ -77,7 +78,7 @@ export default function Page() {
           {/* Tagline */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/30 text-sm text-primary font-semibold mb-4">
             <Sparkles className="w-4 h-4" />
-            <span>Welcome to Innovation 2025</span>
+            <span>Welcome to Innovation 2026</span>
           </div>
 
           {/* Main Title */}
