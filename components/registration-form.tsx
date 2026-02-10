@@ -12,7 +12,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
-import { Card } from '@/components/ui/card'
 import { AlertCircle, CheckCircle } from 'lucide-react'
 import { Alert, AlertDescription } from '@/components/ui/alert'
 
@@ -164,210 +163,221 @@ export default function RegistrationForm() {
 
   if (success) {
     return (
-      <Card className="w-full max-w-2xl mx-auto p-8 bg-card border-primary/30">
-        <div className="flex flex-col items-center gap-4 text-center">
+      <div className="w-full max-w-2xl mx-auto">
+        <div className="flex flex-col items-center gap-6 text-center py-12">
           <CheckCircle className="w-16 h-16 text-green-500" />
           <h2 className="text-3xl font-bold text-foreground">
-            Registration Successful!
+            Your response has been recorded
           </h2>
-          <p className="text-muted-foreground text-lg">
+          <p className="text-muted-foreground text-base">
             Thank you for registering for FusionFest. We've received your registration and will contact you soon with more details.
           </p>
           <Button
             onClick={() => setSuccess(false)}
-            className="mt-4 px-6 py-2"
+            className="mt-4"
+            variant="outline"
           >
-            Register Another Person
+            Submit another response
           </Button>
         </div>
-      </Card>
+      </div>
     )
   }
 
   return (
-    <Card className="w-full max-w-2xl mx-auto p-8 bg-card border-primary/30">
-      <h1 className="text-4xl font-bold text-center mb-2 text-foreground">
-        FusionFest Registration
-      </h1>
-      <p className="text-center text-muted-foreground mb-8">
-        Register for FusionFest 2026 and join the ultimate tech celebration!
-      </p>
-
-      {error && (
-        <Alert className="mb-6 border-red-500/50 bg-red-500/10">
-          <AlertCircle className="h-4 w-4 text-red-500" />
-          <AlertDescription className="text-red-600">{error}</AlertDescription>
-        </Alert>
-      )}
-
-      <form onSubmit={handleSubmit} className="space-y-6">
-        {/* Full Name */}
-        <div className="space-y-2">
-          <Label htmlFor="full_name" className="text-foreground font-medium">
-            Full Name <span className="text-red-500">*</span>
-          </Label>
-          <Input
-            id="full_name"
-            name="full_name"
-            type="text"
-            placeholder="Enter your full name"
-            value={formData.full_name}
-            onChange={handleInputChange}
-            required
-            className="bg-background border-border"
-          />
+    <div className="w-full min-h-screen bg-background flex flex-col items-center justify-start py-8 px-4">
+      <div className="w-full max-w-2xl">
+        {/* Header */}
+        <div className="mb-8">
+          <h1 className="text-3xl font-bold text-foreground mb-2">
+            FusionFest Registration
+          </h1>
+          <p className="text-muted-foreground text-base">
+            Register for FusionFest 2026 and join the ultimate tech celebration!
+          </p>
         </div>
 
-        {/* Email */}
-        <div className="space-y-2">
-          <Label htmlFor="email" className="text-foreground font-medium">
-            Email Address <span className="text-red-500">*</span>
-          </Label>
-          <Input
-            id="email"
-            name="email"
-            type="email"
-            placeholder="Enter your email address"
-            value={formData.email}
-            onChange={handleInputChange}
-            required
-            className="bg-background border-border"
-          />
-        </div>
+        {/* Error Alert */}
+        {error && (
+          <Alert className="mb-6 border-red-500/50 bg-red-500/10">
+            <AlertCircle className="h-4 w-4 text-red-500" />
+            <AlertDescription className="text-red-600">{error}</AlertDescription>
+          </Alert>
+        )}
 
-        {/* Phone Number */}
-        <div className="space-y-2">
-          <Label htmlFor="phone_number" className="text-foreground font-medium">
-            Phone Number <span className="text-red-500">*</span>
-          </Label>
-          <Input
-            id="phone_number"
-            name="phone_number"
-            type="tel"
-            placeholder="Enter your phone number"
-            value={formData.phone_number}
-            onChange={handleInputChange}
-            required
-            className="bg-background border-border"
-          />
-        </div>
+        {/* Form */}
+          <form onSubmit={handleSubmit} className="space-y-6">
+          {/* Full Name */}
+          <div className="space-y-2">
+            <Label htmlFor="full_name" className="text-foreground font-medium text-sm">
+              Full Name <span className="text-red-500">*</span>
+            </Label>
+            <Input
+              id="full_name"
+              name="full_name"
+              type="text"
+              placeholder="Your full name"
+              value={formData.full_name}
+              onChange={handleInputChange}
+              required
+              className="bg-input border-border"
+            />
+          </div>
 
-        {/* College Name */}
-        <div className="space-y-2">
-          <Label htmlFor="college_name" className="text-foreground font-medium">
-            College Name
-          </Label>
-          <Input
-            id="college_name"
-            name="college_name"
-            type="text"
-            placeholder="Enter your college name"
-            value={formData.college_name}
-            onChange={handleInputChange}
-            className="bg-background border-border"
-          />
-        </div>
+          {/* Email */}
+          <div className="space-y-2">
+            <Label htmlFor="email" className="text-foreground font-medium text-sm">
+              Email Address <span className="text-red-500">*</span>
+            </Label>
+            <Input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="Your email address"
+              value={formData.email}
+              onChange={handleInputChange}
+              required
+              className="bg-input border-border"
+            />
+          </div>
 
-        {/* Department */}
-        <div className="space-y-2">
-          <Label htmlFor="department" className="text-foreground font-medium">
-            Department
-          </Label>
-          <Select
-            value={formData.department}
-            onValueChange={(value) =>
-              handleSelectChange('department', value)
-            }
-          >
-            <SelectTrigger className="bg-background border-border">
-              <SelectValue placeholder="Select your department" />
-            </SelectTrigger>
-            <SelectContent>
-              {DEPARTMENTS.map((dept) => (
-                <SelectItem key={dept} value={dept}>
-                  {dept}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
-        </div>
+          {/* Phone Number */}
+          <div className="space-y-2">
+            <Label htmlFor="phone_number" className="text-foreground font-medium text-sm">
+              Phone Number <span className="text-red-500">*</span>
+            </Label>
+            <Input
+              id="phone_number"
+              name="phone_number"
+              type="tel"
+              placeholder="Your phone number"
+              value={formData.phone_number}
+              onChange={handleInputChange}
+              required
+              className="bg-input border-border"
+            />
+          </div>
 
-        {/* Year / Semester */}
-        <div className="space-y-2">
-          <Label htmlFor="year_semester" className="text-foreground font-medium">
-            Year / Semester
-          </Label>
-          <Select
-            value={formData.year_semester}
-            onValueChange={(value) =>
-              handleSelectChange('year_semester', value)
-            }
-          >
-            <SelectTrigger className="bg-background border-border">
-              <SelectValue placeholder="Select your year" />
-            </SelectTrigger>
-            <SelectContent>
-              {YEARS.map((year) => (
-                <SelectItem key={year} value={year}>
-                  {year}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
-        </div>
+          {/* College Name */}
+          <div className="space-y-2">
+            <Label htmlFor="college_name" className="text-foreground font-medium text-sm">
+              College Name
+            </Label>
+            <Input
+              id="college_name"
+              name="college_name"
+              type="text"
+              placeholder="Your college name"
+              value={formData.college_name}
+              onChange={handleInputChange}
+              className="bg-input border-border"
+            />
+          </div>
 
-        {/* Event Selection */}
-        <div className="space-y-2">
-          <Label htmlFor="event_selection" className="text-foreground font-medium">
-            Select Event(s)
-          </Label>
-          <Select
-            value={formData.event_selection}
-            onValueChange={(value) =>
-              handleSelectChange('event_selection', value)
-            }
-          >
-            <SelectTrigger className="bg-background border-border">
-              <SelectValue placeholder="Select an event" />
-            </SelectTrigger>
-            <SelectContent>
-              {EVENTS.map((event) => (
-                <SelectItem key={event} value={event}>
-                  {event}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
-        </div>
+          {/* Department */}
+          <div className="space-y-2">
+            <Label htmlFor="department" className="text-foreground font-medium text-sm">
+              Department
+            </Label>
+            <Select
+              value={formData.department}
+              onValueChange={(value) =>
+                handleSelectChange('department', value)
+              }
+            >
+              <SelectTrigger className="bg-input border-border">
+                <SelectValue placeholder="Select your department" />
+              </SelectTrigger>
+              <SelectContent>
+                {DEPARTMENTS.map((dept) => (
+                  <SelectItem key={dept} value={dept}>
+                    {dept}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
 
-        {/* Additional Notes */}
-        <div className="space-y-2">
-          <Label htmlFor="additional_notes" className="text-foreground font-medium">
-            Additional Notes (Optional)
-          </Label>
-          <Textarea
-            id="additional_notes"
-            name="additional_notes"
-            placeholder="Any additional information you'd like to share"
-            value={formData.additional_notes}
-            onChange={handleInputChange}
-            className="bg-background border-border min-h-24 resize-none"
-          />
-        </div>
+          {/* Year / Semester */}
+          <div className="space-y-2">
+            <Label htmlFor="year_semester" className="text-foreground font-medium text-sm">
+              Year / Semester
+            </Label>
+            <Select
+              value={formData.year_semester}
+              onValueChange={(value) =>
+                handleSelectChange('year_semester', value)
+              }
+            >
+              <SelectTrigger className="bg-input border-border">
+                <SelectValue placeholder="Select your year" />
+              </SelectTrigger>
+              <SelectContent>
+                {YEARS.map((year) => (
+                  <SelectItem key={year} value={year}>
+                    {year}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
 
-        {/* Submit Button */}
-        <Button
-          type="submit"
-          disabled={loading}
-          className="w-full py-6 text-lg font-semibold bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-background button-glow transition-all duration-300"
-        >
-          {loading ? 'Submitting...' : 'Complete Registration'}
-        </Button>
+          {/* Event Selection */}
+          <div className="space-y-2">
+            <Label htmlFor="event_selection" className="text-foreground font-medium text-sm">
+              Select Event(s)
+            </Label>
+            <Select
+              value={formData.event_selection}
+              onValueChange={(value) =>
+                handleSelectChange('event_selection', value)
+              }
+            >
+              <SelectTrigger className="bg-input border-border">
+                <SelectValue placeholder="Select an event" />
+              </SelectTrigger>
+              <SelectContent>
+                {EVENTS.map((event) => (
+                  <SelectItem key={event} value={event}>
+                    {event}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
 
-        <p className="text-xs text-muted-foreground text-center">
+          {/* Additional Notes */}
+          <div className="space-y-2">
+            <Label htmlFor="additional_notes" className="text-foreground font-medium text-sm">
+              Additional Notes (Optional)
+            </Label>
+            <Textarea
+              id="additional_notes"
+              name="additional_notes"
+              placeholder="Any additional information you'd like to share"
+              value={formData.additional_notes}
+              onChange={handleInputChange}
+              className="bg-input border-border min-h-24 resize-none"
+            />
+          </div>
+
+          {/* Submit Button */}
+          <div className="pt-4">
+            <Button
+              type="submit"
+              disabled={loading}
+              className="w-full py-3 text-base font-medium bg-primary hover:bg-primary/90 text-primary-foreground transition-all duration-300"
+            >
+              {loading ? 'Submitting...' : 'Submit'}
+            </Button>
+          </div>
+        </form>
+
+        {/* Footer */}
+        <p className="text-xs text-muted-foreground text-center mt-8">
           By registering, you agree to receive updates about FusionFest 2026
         </p>
-      </form>
-    </Card>
+      </div>
+    </div>
   )
 }
