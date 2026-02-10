@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { Navbar } from '@/components/navbar'
@@ -53,13 +54,6 @@ const NonTechnicalEvents = [
 ]
 
 export default function Page() {
-  const handleRegister = () => {
-    window.open(
-      'https://forms.gle/o5nb7Vsq5XbwmsnY9',
-      '_blank',
-      'noopener,noreferrer'
-    )
-  }
 
   return (
     <div className="min-h-screen bg-background">
@@ -102,13 +96,14 @@ export default function Page() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-            <Button
-              onClick={handleRegister}
-              className="px-8 py-6 text-lg font-semibold bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-background button-glow transition-all duration-300"
-              aria-label="Register for FusionFest"
-            >
-              Register Now
-            </Button>
+            <Link href="/register">
+              <Button
+                className="px-8 py-6 text-lg font-semibold bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-background button-glow transition-all duration-300"
+                aria-label="Register for FusionFest"
+              >
+                Register Now
+              </Button>
+            </Link>
             <Button
               onClick={() => document.querySelector('#events')?.scrollIntoView({ behavior: 'smooth' })}
               className="px-8 py-6 text-lg font-semibold bg-transparent border-2 border-primary text-primary hover:bg-primary/10 transition-all duration-300"
