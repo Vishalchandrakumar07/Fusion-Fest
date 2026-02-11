@@ -268,7 +268,7 @@ export default function Page() {
             </Card>
             <Card className="p-6 bg-card border-accent/30">
               <h3 className="text-xl font-bold text-accent mb-4">Contact</h3>
-              <p className="text-muted-foreground mb-2">Email: fusion@cse.edu.in</p>
+              <p className="text-muted-foreground mb-2">Email: Codeynix@.edu.in</p>
               <p className="text-muted-foreground mb-2">Phone: +91 XXXX-XXX-XXX</p>
               <p className="text-secondary">Follow us on social media</p>
             </Card>
