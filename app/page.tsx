@@ -253,28 +253,49 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="py-20 px-4 bg-background">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent mb-12 text-center">
-            Venue & Contact
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <Card className="p-6 bg-card border-primary/30">
-              <h3 className="text-xl font-bold text-primary mb-4">Location</h3>
-              <p className="text-muted-foreground mb-2">CSE Department Block</p>
-              <p className="text-muted-foreground mb-2">College Campus</p>
-              <p className="text-secondary">Date: [27/02/2026]</p>
-            </Card>
-            <Card className="p-6 bg-card border-accent/30">
-              <h3 className="text-xl font-bold text-accent mb-4">Contact</h3>
-              <p className="text-muted-foreground mb-2">Email: Codeynix@.edu.in</p>
-              <p className="text-muted-foreground mb-2">Phone: +91 XXXX-XXX-XXX</p>
-              <p className="text-secondary">Follow us on social media</p>
-            </Card>
-          </div>
-        </div>
-      </section>
+{/* Contact Section */}
+<section id="contact" className="py-20 px-4 bg-background">
+  <div className="max-w-3xl mx-auto">
+    
+    <h2 className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent mb-12 text-center">
+      Venue & Contact
+    </h2>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      
+      <Card className="p-6 bg-card border-primary/30">
+        <h3 className="text-xl font-bold text-primary mb-4">Location</h3>
+        <p className="text-muted-foreground mb-2">CSE Department Block</p>
+        <p className="text-muted-foreground mb-2">College Campus</p>
+        <p className="text-secondary">Date: [27/02/2026]</p>
+      </Card>
+
+      <Card className="p-6 bg-card border-accent/30">
+        <h3 className="text-xl font-bold text-accent mb-4">Contact</h3>
+        <p className="text-muted-foreground mb-2">Email: Codeynix@.edu.in</p>
+        <p className="text-muted-foreground mb-2">Phone: +91 78680 40827</p>
+        <p className="text-secondary">Follow us on social media</p>
+      </Card>
+
+    </div>
+
+    {/* WhatsApp Button BELOW the cards */}
+    <div className="mt-8 text-center">
+      <a
+        href="https://chat.whatsapp.com/CwcPd7pWj1SH8gekj2roPq"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Button size="lg">
+          📲 Join Our WhatsApp Group
+        </Button>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
 
       {/* Footer */}
       <footer className="border-t border-border py-8 px-4 text-center text-muted-foreground bg-background">
