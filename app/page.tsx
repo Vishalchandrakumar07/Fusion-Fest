@@ -274,8 +274,17 @@ export default function Page() {
         <h3 className="text-xl font-bold text-accent mb-4">Contact</h3>
         <p className="text-muted-foreground mb-2">Email: Codeynix@.edu.in</p>
         <p className="text-muted-foreground mb-2">Phone: +91 78680 40827</p>
-        <p className="text-secondary">Follow us on social media</p>
+
+        <a
+          href="https://maps.app.goo.gl/xHjPc5cdkriDysaA6?g_st=aw"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-secondary underline"
+        >
+           View Location on Map
+        </a>
       </Card>
+
 
     </div>
 
