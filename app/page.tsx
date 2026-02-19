@@ -139,31 +139,44 @@ export default function Page() {
           </div>
 
           {/* Technical Events */}
-          <div className="mb-20">
-            <h3 className="text-3xl md:text-4xl font-bold text-primary mb-10 text-center">
-              Technical Events
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {TechnicalEvents.map((event, index) => (
-                <Card
-                  key={index}
-                  className="group relative p-6 bg-card border-primary/30 hover:border-primary/60 glow-box transition-all duration-300 cursor-pointer overflow-hidden"
-                >
-                  {/* Gradient overlay on hover */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+<div className="mb-20">
+  <h3 className="text-3xl md:text-4xl font-bold text-primary mb-10 text-center">
+    Technical Events
+  </h3>
 
-                  <div className="relative z-10">
-                    <h4 className="text-xl font-bold text-primary mb-3 group-hover:text-accent transition-colors">
-                      {event.title}
-                    </h4>
-                    <p className="text-muted-foreground group-hover:text-foreground transition-colors">
-                      {event.description}
-                    </p>
-                  </div>
-                </Card>
-              ))}
-            </div>
-          </div>
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    {TechnicalEvents.map((event, index) => (
+      <Card
+        key={index}
+        className="group relative p-6 bg-card border-primary/30 hover:border-primary/60 glow-box transition-all duration-300 cursor-pointer overflow-hidden"
+      >
+        {/* Gradient overlay on hover */}
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+        <div className="relative z-10">
+          <h4 className="text-xl font-bold text-primary mb-3 group-hover:text-accent transition-colors">
+            {event.title}
+          </h4>
+          <p className="text-muted-foreground group-hover:text-foreground transition-colors">
+            {event.description}
+          </p>
+        </div>
+      </Card>
+    ))}
+  </div>
+
+  {/* Download Button */}
+  <div className="flex justify-center mt-10">
+    <a
+      href="/technical-events-rules.pdf"
+      download
+      className="px-6 py-3 rounded-xl bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-all glow-box"
+    >
+      Download Rules & Regulations
+    </a>
+  </div>
+</div>
+
 
           {/* Non-Technical Events */}
           <div>
@@ -190,6 +203,17 @@ export default function Page() {
                 </Card>
               ))}
             </div>
+
+              {/* Download Button */}
+              <div className="flex justify-center mt-10">
+                <a
+                  href="/non-technical-events-rules.pdf"
+                  download
+                  className="px-6 py-3 rounded-xl bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-all glow-box"
+                >
+                  Download Rules & Regulations
+                </a>
+              </div>
           </div>
         </div>
       </section>
@@ -272,8 +296,8 @@ export default function Page() {
 
       <Card className="p-6 bg-card border-accent/30">
         <h3 className="text-xl font-bold text-accent mb-4">Contact</h3>
-        <p className="text-muted-foreground mb-2">Email: Codeynix@.edu.in</p>
-        <p className="text-muted-foreground mb-2">Phone: +91 78680 40827</p>
+        <p className="text-muted-foreground mb-2">Email: codeynix@.edu.in</p>
+        <p className="text-muted-foreground mb-2">Phone: +91 93611 37232</p>
 
         <a
           href="https://maps.app.goo.gl/xHjPc5cdkriDysaA6?g_st=aw"
