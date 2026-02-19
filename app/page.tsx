@@ -315,7 +315,7 @@ export default function Page() {
     {/* WhatsApp Button BELOW the cards */}
     <div className="mt-8 text-center">
       <a
-        href="https://chat.whatsapp.com/CwcPd7pWj1SH8gekj2roPq"
+        href="https://chat.whatsapp.com/F3MKAwGGZqDJwuDfCnAjfn"
         target="_blank"
         rel="noopener noreferrer"
       >
